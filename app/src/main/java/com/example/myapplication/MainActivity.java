@@ -5,15 +5,29 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String BROKER_URL = "tcp://10.4.116.3:1883";
+    private static String BROKER_URL = "tcp://10.4.116.3:1883";
     private static final String CLIENT_ID = "1";
+
+    private static String TOPIC = "topic";
     private MqttHandler mqttHandler;
 
-    private Button test_button;
+    private Button setIpButton;
+    private Button setTopicButton;
+    private Button sendMessageButton;
+    private EditText ipEditText;
+    private EditText topicEditText;
+    private EditText messageEditText;
+    private TextView ipTextView;
+    private TextView topicTextView;
+
 
     CustomMqttCallback mqttCallback = new CustomMqttCallback(this);
 
@@ -23,7 +37,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        test_button = findViewById(R.id.test_button);
+        setIpButton = findViewById(R.id.ip_button);
+        setTopicButton = findViewById(R.id.topic_button);
+        sendMessageButton = findViewById(R.id.message_button);
+        ipEditText = findViewById(R.id.ip_edittext);
+        topicEditText = findViewById(R.id.topic_editText);
+        messageEditText = findViewById(R.id.message_edittext);
+        ipTextView = findViewById(R.id.ip_textview);
+        topicTextView = findViewById(R.id.topic_textview);
 
         mqttHandler = new MqttHandler();
         mqttHandler.connect(BROKER_URL, CLIENT_ID);
@@ -33,14 +54,45 @@ public class MainActivity extends AppCompatActivity {
         } else {
             Toast.makeText(this, "Not connected to MQTT broker", Toast.LENGTH_SHORT).show();
         }
-        publishMsg("topic", "ON MOBILE");
+        publishMsg("topic", "Connected from mobile");
 
-        test_button.setOnClickListener(new View.OnClickListener() {
+        ipTextView.setText("Current IP: " + BROKER_URL.substring(6));
+
+        setIpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                publishMsg("pingpong/primitive", "69");
+                String iptemp = ipEditText.getText().toString();
+                if(!iptemp.equals("")){
+                    BROKER_URL = "tcp://" + iptemp;
+                    ipTextView.setText("Current IP: " + BROKER_URL.substring(6));
+                }
             }
         });
+
+        topicTextView.setText("Current topic: " + TOPIC);
+        setTopicButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String topicTemp = topicEditText.getText().toString();
+                if (!topicTemp.equals("")) {
+                    TOPIC = topicTemp;
+                    topicTextView.setText("Current topic: " + TOPIC);
+                }
+            }
+        });
+
+        sendMessageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String messageTemp = messageEditText.getText().toString();
+                if(!messageTemp.equals("")){
+                    publishMsg(TOPIC, messageTemp);
+                }else{
+                    sendMessageButton.setError("Message field blank");
+                }
+            }
+        });
+
     }
     @Override
     protected void onDestroy(){
