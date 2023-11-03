@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         ipTextView = findViewById(R.id.ip_textview);
         topicTextView = findViewById(R.id.topic_textview);
 
+        /*
         mqttHandler = new MqttHandler();
         mqttHandler.connect(BROKER_URL, CLIENT_ID);
 
@@ -56,15 +57,29 @@ public class MainActivity extends AppCompatActivity {
         }
         publishMsg("topic", "Connected from mobile");
 
+         */
+
         ipTextView.setText("Current IP: " + BROKER_URL.substring(6));
 
         setIpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String iptemp = ipEditText.getText().toString();
-                if(!iptemp.equals("")){
-                    BROKER_URL = "tcp://" + iptemp;
+                String ipTemp = ipEditText.getText().toString();
+                if(!ipTemp.equals("")){
+                    BROKER_URL = "tcp://" + ipTemp;
                     ipTextView.setText("Current IP: " + BROKER_URL.substring(6));
+                    if(mqttHandler == null || mqttHandler.isConnected()){
+                        mqttHandler.disconnect();
+                    }
+                    mqttHandler = new MqttHandler();
+                    mqttHandler.connect(BROKER_URL, CLIENT_ID);
+                    if (mqttHandler.isConnected()) {
+                        Toast.makeText(MainActivity.this, "Connected to MQTT broker", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(MainActivity.this, "Not connected to MQTT broker", Toast.LENGTH_SHORT).show();
+                    }
+                }else{
+                    setIpButton.setError("IP Field Empty");
                 }
             }
         });
