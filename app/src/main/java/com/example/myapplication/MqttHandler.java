@@ -62,4 +62,26 @@ public class MqttHandler {
         }
         return false;
     }
+
+    public boolean updateBrokerUrl(String brokerUrl, String clientId){
+        disconnect();
+        Thread t = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                connect(brokerUrl, clientId);
+            }
+        });
+        t.start();
+        try{
+            t.join();
+        }catch (InterruptedException e){
+            e.printStackTrace();
+        }
+        //connect(brokerUrl, clientId);
+        if (isConnected()){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }

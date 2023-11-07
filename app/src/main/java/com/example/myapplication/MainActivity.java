@@ -46,20 +46,19 @@ public class MainActivity extends AppCompatActivity {
         ipTextView = findViewById(R.id.ip_textview);
         topicTextView = findViewById(R.id.topic_textview);
 
-        /*
+
         mqttHandler = new MqttHandler();
+        /*
         mqttHandler.connect(BROKER_URL, CLIENT_ID);
 
         if (mqttHandler.isConnected()) {
-            Toast.makeText(this, "Connected to MQTT broker", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Connected to default MQTT broker", Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(this, "Not connected to MQTT broker", Toast.LENGTH_SHORT).show();
         }
-        publishMsg("topic", "Connected from mobile");
+        */
 
-         */
-
-        ipTextView.setText("Current IP: " + BROKER_URL.substring(6));
+        ipTextView.setText("Current IP: N/A");
 
         setIpButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,16 +66,14 @@ public class MainActivity extends AppCompatActivity {
                 String ipTemp = ipEditText.getText().toString();
                 if(!ipTemp.equals("")){
                     BROKER_URL = "tcp://" + ipTemp;
-                    ipTextView.setText("Current IP: " + BROKER_URL.substring(6));
-                    if(mqttHandler == null || mqttHandler.isConnected()){
-                        mqttHandler.disconnect();
-                    }
-                    mqttHandler = new MqttHandler();
-                    mqttHandler.connect(BROKER_URL, CLIENT_ID);
-                    if (mqttHandler.isConnected()) {
+                    if (mqttHandler.updateBrokerUrl(BROKER_URL, CLIENT_ID)) {
                         Toast.makeText(MainActivity.this, "Connected to MQTT broker", Toast.LENGTH_SHORT).show();
+                        ipTextView.setText(String.format("Current IP: %s", ipTemp));
+                        setIpButton.setError(null);
                     } else {
-                        Toast.makeText(MainActivity.this, "Not connected to MQTT broker", Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(MainActivity.this, "Not connected to MQTT broker", Toast.LENGTH_SHORT).show();
+                        setIpButton.setError("Unable to connect to broker");
+                        ipTextView.setText("Current IP: N/A");
                     }
                 }else{
                     setIpButton.setError("IP Field Empty");
@@ -84,14 +81,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        topicTextView.setText("Current topic: " + TOPIC);
+        topicTextView.setText(String.format("Current topic: " + TOPIC));
         setTopicButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String topicTemp = topicEditText.getText().toString();
                 if (!topicTemp.equals("")) {
                     TOPIC = topicTemp;
-                    topicTextView.setText("Current topic: " + TOPIC);
+                    topicTextView.setText(String.format("Current topic: " + TOPIC));
                 }
             }
         });

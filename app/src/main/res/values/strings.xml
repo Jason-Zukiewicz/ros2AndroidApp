@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string name="current_ip_text"></string>
+    <string name="ip_address">IP Address</string>
 </resources>
