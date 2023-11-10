@@ -17,8 +17,7 @@
         android:id="@+id/ip_edittext"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="20dp"
-        android:hint="@string/ip_address"
-        android:layout_weight="2"/>
+        android:hint="@string/ip_address" />
 
     <TextView
         android:id="@+id/ip_textview"
@@ -26,16 +25,14 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_margin="5dp"
-        android:hint="Current IP: "
-        android:layout_weight="1"/>
+        android:hint="Current IP: " />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/ip_button"
         android:layout_gravity="center_horizontal"
-        android:text="Set Broker Url"
-        android:layout_weight="2"/>
+        android:text="Set Broker Url" />
 
     <EditText
         android:layout_width="match_parent"
@@ -44,8 +41,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="20dp"
-        android:hint="Topic"
-        android:layout_weight="2"/>
+        android:hint="Topic" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -53,16 +49,14 @@
         android:id="@+id/topic_textview"
         android:layout_gravity="center_horizontal"
         android:hint="Current topic: "
-        android:layout_margin="5dp"
-        android:layout_weight="1"/>
+        android:layout_margin="5dp" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/topic_button"
         android:layout_gravity="center_horizontal"
-        android:text="Set Topic"
-        android:layout_weight="2"/>
+        android:text="Set Topic" />
 
     <EditText
         android:layout_width="match_parent"
@@ -71,8 +65,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="20dp"
-        android:hint="Message"
-        android:layout_weight="2"/>
+        android:hint="Message" />
 
     <Button
         android:id="@+id/message_button"
@@ -80,18 +73,45 @@
         android:layout_height="wrap_content"
         android:text="Send Message"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
-        android:layout_weight="2"/>
+        android:layout_marginTop="20dp" />
+
 
     <Button
-        android:id="@+id/start_sub_button"
-        style="@style/Widget.MaterialComponents.Button"
+        android:id="@+id/forward_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:layout_margin="15dp"
-        android:layout_weight="1"
-        android:text="Start Subscriber" />
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:text="Forward"/>
+    <TableRow
+        android:id="@+id/lr_tablerow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/left_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Turn left"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="40dp"/>
+
+        <Button
+            android:id="@+id/right_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Turn right"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="40dp"/>
+    </TableRow>
+    <Button
+        android:id="@+id/back_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Back"/>
 
 
 </LinearLayout>

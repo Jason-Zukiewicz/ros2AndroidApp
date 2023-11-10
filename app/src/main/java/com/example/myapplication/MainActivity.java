@@ -28,6 +28,10 @@ public class MainActivity extends AppCompatActivity {
     private EditText messageEditText;
     private TextView ipTextView;
     private TextView topicTextView;
+    private Button forwardButton;
+    private Button backButton;
+    private Button leftButton;
+    private Button rightButton;
 
 
     CustomMqttCallback mqttCallback = new CustomMqttCallback(this);
@@ -47,6 +51,12 @@ public class MainActivity extends AppCompatActivity {
         messageEditText = findViewById(R.id.message_edittext);
         ipTextView = findViewById(R.id.ip_textview);
         topicTextView = findViewById(R.id.topic_textview);
+
+        forwardButton = findViewById(R.id.forward_button);
+        backButton = findViewById(R.id.back_button);
+        leftButton = findViewById(R.id.left_button);
+        rightButton = findViewById(R.id.right_button);
+
 
 
         mqttHandler = new MqttHandler();
@@ -104,6 +114,38 @@ public class MainActivity extends AppCompatActivity {
                 }else{
                     sendMessageButton.setError("Message field blank");
                 }
+            }
+        });
+
+        forwardButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //TODO
+                //publishMsg();
+            }
+        });
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //TODO
+                //publishMsg();
+            }
+        });
+
+        leftButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //TODO
+                //publishMsg();
+            }
+        });
+
+        rightButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //TODO
+                //publishMsg();
             }
         });
 
