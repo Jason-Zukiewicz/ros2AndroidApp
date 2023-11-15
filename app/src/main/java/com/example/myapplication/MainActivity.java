@@ -121,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //TODO
-                //publishMsg();
+                publishMsg("mqtt_topic", "12");
             }
         });
 
@@ -129,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //TODO
-                //publishMsg();
+                publishMsg("mqtt_topic", "6");
             }
         });
 
@@ -137,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //TODO
-                //publishMsg();
+                publishMsg("mqtt_topic", "9");
             }
         });
 
@@ -145,7 +145,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //TODO
-                //publishMsg();
+                publishMsg("mqtt_topic", "3");
             }
         });
 

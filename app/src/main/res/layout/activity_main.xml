@@ -78,11 +78,12 @@
 
     <Button
         android:id="@+id/forward_button"
+        style="@android:style/Widget.Holo.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="40dp"
-        android:text="Forward"/>
+        android:text="Forward" />
     <TableRow
         android:id="@+id/lr_tablerow"
         android:layout_width="match_parent"
@@ -92,26 +93,30 @@
 
         <Button
             android:id="@+id/left_button"
+            style="@android:style/Widget.Holo.Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Turn left"
+            android:layout_marginHorizontal="40dp"
             android:layout_weight="1"
-            android:layout_marginHorizontal="40dp"/>
+            android:text="Turn left" />
 
         <Button
             android:id="@+id/right_button"
+            style="@android:style/Widget.Holo.Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Turn right"
+            android:layout_marginHorizontal="40dp"
             android:layout_weight="1"
-            android:layout_marginHorizontal="40dp"/>
+            android:text="Turn right" />
     </TableRow>
+
     <Button
         android:id="@+id/back_button"
+        style="@android:style/Widget.Holo.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Back"/>
+        android:text="Back" />
 
 
 </LinearLayout>
