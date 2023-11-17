@@ -1,0 +1,48 @@
+[0.895s] Invoking command in '/home/shelton/ros2AndroidApp/translateNode/src/translateNode': PYTHONPATH=/home/shelton/ros2AndroidApp/translateNode/build/translateNode/prefix_override:/home/shelton/ros2AndroidApp/translateNode/install/translateNode/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/translateNode build --build-base /home/shelton/ros2AndroidApp/translateNode/build/translateNode/build install --record /home/shelton/ros2AndroidApp/translateNode/build/translateNode/install.log --single-version-externally-managed
+[1.201s] running egg_info
+[1.202s] creating ../../build/translateNode/translateNode.egg-info
+[1.203s] writing ../../build/translateNode/translateNode.egg-info/PKG-INFO
+[1.203s] writing dependency_links to ../../build/translateNode/translateNode.egg-info/dependency_links.txt
+[1.203s] writing entry points to ../../build/translateNode/translateNode.egg-info/entry_points.txt
+[1.204s] writing requirements to ../../build/translateNode/translateNode.egg-info/requires.txt
+[1.204s] writing top-level names to ../../build/translateNode/translateNode.egg-info/top_level.txt
+[1.205s] writing manifest file '../../build/translateNode/translateNode.egg-info/SOURCES.txt'
+[1.207s] reading manifest file '../../build/translateNode/translateNode.egg-info/SOURCES.txt'
+[1.208s] writing manifest file '../../build/translateNode/translateNode.egg-info/SOURCES.txt'
+[1.208s] running build
+[1.208s] running build_py
+[1.209s] creating /home/shelton/ros2AndroidApp/translateNode/build/translateNode/build
+[1.209s] creating /home/shelton/ros2AndroidApp/translateNode/build/translateNode/build/lib
+[1.209s] creating /home/shelton/ros2AndroidApp/translateNode/build/translateNode/build/lib/translateNode
+[1.210s] copying translateNode/__init__.py -> /home/shelton/ros2AndroidApp/translateNode/build/translateNode/build/lib/translateNode
+[1.210s] copying translateNode/tester_node.py -> /home/shelton/ros2AndroidApp/translateNode/build/translateNode/build/lib/translateNode
+[1.210s] copying translateNode/translater_node.py -> /home/shelton/ros2AndroidApp/translateNode/build/translateNode/build/lib/translateNode
+[1.211s] running install
+[1.211s] /usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[1.211s]   warnings.warn(
+[1.212s] running install_lib
+[1.213s] creating /home/shelton/ros2AndroidApp/translateNode/install/translateNode/lib/python3.10/site-packages/translateNode
+[1.213s] copying /home/shelton/ros2AndroidApp/translateNode/build/translateNode/build/lib/translateNode/__init__.py -> /home/shelton/ros2AndroidApp/translateNode/install/translateNode/lib/python3.10/site-packages/translateNode
+[1.214s] copying /home/shelton/ros2AndroidApp/translateNode/build/translateNode/build/lib/translateNode/tester_node.py -> /home/shelton/ros2AndroidApp/translateNode/install/translateNode/lib/python3.10/site-packages/translateNode
+[1.214s] copying /home/shelton/ros2AndroidApp/translateNode/build/translateNode/build/lib/translateNode/translater_node.py -> /home/shelton/ros2AndroidApp/translateNode/install/translateNode/lib/python3.10/site-packages/translateNode
+[1.214s] byte-compiling /home/shelton/ros2AndroidApp/translateNode/install/translateNode/lib/python3.10/site-packages/translateNode/__init__.py to __init__.cpython-310.pyc
+[1.215s] byte-compiling /home/shelton/ros2AndroidApp/translateNode/install/translateNode/lib/python3.10/site-packages/translateNode/tester_node.py to tester_node.cpython-310.pyc
+[1.216s] byte-compiling /home/shelton/ros2AndroidApp/translateNode/install/translateNode/lib/python3.10/site-packages/translateNode/translater_node.py to translater_node.cpython-310.pyc
+[1.216s]   File "/home/shelton/ros2AndroidApp/translateNode/install/translateNode/lib/python3.10/site-packages/translateNode/translater_node.py", line 28
+[1.216s]     			twistMsg.angular.z = -2:
+[1.216s]     			                       ^
+[1.216s] SyntaxError: invalid syntax
+[1.217s] 
+[1.217s] running install_data
+[1.217s] creating /home/shelton/ros2AndroidApp/translateNode/install/translateNode/share/ament_index
+[1.217s] creating /home/shelton/ros2AndroidApp/translateNode/install/translateNode/share/ament_index/resource_index
+[1.218s] creating /home/shelton/ros2AndroidApp/translateNode/install/translateNode/share/ament_index/resource_index/packages
+[1.218s] copying resource/translateNode -> /home/shelton/ros2AndroidApp/translateNode/install/translateNode/share/ament_index/resource_index/packages
+[1.218s] copying package.xml -> /home/shelton/ros2AndroidApp/translateNode/install/translateNode/share/translateNode
+[1.219s] running install_egg_info
+[1.221s] Copying ../../build/translateNode/translateNode.egg-info to /home/shelton/ros2AndroidApp/translateNode/install/translateNode/lib/python3.10/site-packages/translateNode-0.0.0-py3.10.egg-info
+[1.222s] running install_scripts
+[1.251s] Installing tester script to /home/shelton/ros2AndroidApp/translateNode/install/translateNode/lib/translateNode
+[1.252s] Installing translater script to /home/shelton/ros2AndroidApp/translateNode/install/translateNode/lib/translateNode
+[1.252s] writing list of installed files to '/home/shelton/ros2AndroidApp/translateNode/build/translateNode/install.log'
+[1.281s] Invoked command in '/home/shelton/ros2AndroidApp/translateNode/src/translateNode' returned '0': PYTHONPATH=/home/shelton/ros2AndroidApp/translateNode/build/translateNode/prefix_override:/home/shelton/ros2AndroidApp/translateNode/install/translateNode/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/translateNode build --build-base /home/shelton/ros2AndroidApp/translateNode/build/translateNode/build install --record /home/shelton/ros2AndroidApp/translateNode/build/translateNode/install.log --single-version-externally-managed
