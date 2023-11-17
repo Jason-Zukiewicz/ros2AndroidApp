@@ -1,0 +1,25 @@
+running egg_info
+writing ../../build/translateNode/translateNode.egg-info/PKG-INFO
+writing dependency_links to ../../build/translateNode/translateNode.egg-info/dependency_links.txt
+writing entry points to ../../build/translateNode/translateNode.egg-info/entry_points.txt
+writing requirements to ../../build/translateNode/translateNode.egg-info/requires.txt
+writing top-level names to ../../build/translateNode/translateNode.egg-info/top_level.txt
+reading manifest file '../../build/translateNode/translateNode.egg-info/SOURCES.txt'
+writing manifest file '../../build/translateNode/translateNode.egg-info/SOURCES.txt'
+running build
+running build_py
+copying translateNode/translater_node.py -> /home/shelton/ros2AndroidApp/translateNode/build/translateNode/build/lib/translateNode
+running install
+/usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+  warnings.warn(
+running install_lib
+copying /home/shelton/ros2AndroidApp/translateNode/build/translateNode/build/lib/translateNode/translater_node.py -> /home/shelton/ros2AndroidApp/translateNode/install/translateNode/lib/python3.10/site-packages/translateNode
+byte-compiling /home/shelton/ros2AndroidApp/translateNode/install/translateNode/lib/python3.10/site-packages/translateNode/translater_node.py to translater_node.cpython-310.pyc
+running install_data
+running install_egg_info
+removing '/home/shelton/ros2AndroidApp/translateNode/install/translateNode/lib/python3.10/site-packages/translateNode-0.0.0-py3.10.egg-info' (and everything under it)
+Copying ../../build/translateNode/translateNode.egg-info to /home/shelton/ros2AndroidApp/translateNode/install/translateNode/lib/python3.10/site-packages/translateNode-0.0.0-py3.10.egg-info
+running install_scripts
+Installing tester script to /home/shelton/ros2AndroidApp/translateNode/install/translateNode/lib/translateNode
+Installing translater script to /home/shelton/ros2AndroidApp/translateNode/install/translateNode/lib/translateNode
+writing list of installed files to '/home/shelton/ros2AndroidApp/translateNode/build/translateNode/install.log'
