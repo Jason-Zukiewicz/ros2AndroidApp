@@ -80,6 +80,8 @@ public class MainActivity extends AppCompatActivity {
                     BROKER_URL = "tcp://" + ipTemp;
                     if(!mqttHandler.isConnected()){
                         mqttHandler.connect(BROKER_URL, CLIENT_ID);
+                        ipTextView.setText(String.format("Current IP: %s", ipTemp));
+                        setIpButton.setError(null);
                     }
                     else if (mqttHandler.updateBrokerUrl(BROKER_URL, CLIENT_ID)) {
                         Toast.makeText(MainActivity.this, "Connected to MQTT broker", Toast.LENGTH_SHORT).show();
