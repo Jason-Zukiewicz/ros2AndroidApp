@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private static String BROKER_URL = "tcp://10.4.116.3:1883";
     private static final String CLIENT_ID = "1";
 
-    private static String TOPIC = "topic";
+    private static String TOPIC = "mqtt_topic";
     private MqttHandler mqttHandler;
 
     private Button setIpButton;
@@ -28,10 +29,10 @@ public class MainActivity extends AppCompatActivity {
     private EditText messageEditText;
     private TextView ipTextView;
     private TextView topicTextView;
-    private Button forwardButton;
-    private Button backButton;
-    private Button leftButton;
-    private Button rightButton;
+    private ImageButton forwardButton;
+    private ImageButton backButton;
+    private ImageButton leftButton;
+    private ImageButton rightButton;
 
 
     CustomMqttCallback mqttCallback = new CustomMqttCallback(this);
@@ -77,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String ipTemp = ipEditText.getText().toString();
                 if(!ipTemp.equals("")){
-                    BROKER_URL = "tcp://" + ipTemp;
+                    BROKER_URL = "tcp://" + ipTemp + ":1883";
                     if(!mqttHandler.isConnected()){
                         mqttHandler.connect(BROKER_URL, CLIENT_ID);
                         ipTextView.setText(String.format("Current IP: %s", ipTemp));
@@ -126,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //TODO
-                publishMsg("mqtt_topic", "12");
+                publishMsg(TOPIC, "12");
             }
         });
 
@@ -134,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //TODO
-                publishMsg("mqtt_topic", "6");
+                publishMsg(TOPIC, "6");
             }
         });
 
@@ -142,7 +143,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //TODO
-                publishMsg("mqtt_topic", "9");
+                publishMsg(TOPIC, "9");
             }
         });
 
@@ -150,7 +151,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //TODO
-                publishMsg("mqtt_topic", "3");
+                publishMsg(TOPIC, "3");
             }
         });
 
