@@ -1,0 +1,4 @@
+[console_scripts]
+tester = translateNode.tester_node:main
+translater = translateNode.translater_node:main
+

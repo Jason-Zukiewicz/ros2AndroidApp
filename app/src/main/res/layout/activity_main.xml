@@ -7,13 +7,17 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content" />
+
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/ip_edittext"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="20dp"
-        android:hint="IP Address"/>
+        android:hint="@string/ip_address" />
 
     <TextView
         android:id="@+id/ip_textview"
@@ -21,14 +25,14 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_margin="5dp"
-        android:hint="Current IP: "/>
+        android:hint="Current IP: " />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/ip_button"
         android:layout_gravity="center_horizontal"
-        android:text="Set IP" />
+        android:text="Set Broker Url" />
 
     <EditText
         android:layout_width="match_parent"
@@ -69,6 +73,60 @@
         android:layout_height="wrap_content"
         android:text="Send Message"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="20dp" />
+
+
+    <ImageButton
+        android:id="@+id/forward_button"
+        style="@android:style/Widget.Holo.Button"
+        android:layout_width="72dp"
+        android:layout_height="82dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:background="@color/backward_arrow_background"
+        android:src="@mipmap/forward_arrow_foreground" />
+    <TableRow
+        android:id="@+id/lr_tablerow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal" >
+
+        <ImageButton
+            android:id="@+id/left_button"
+            style="@android:style/Widget.Holo.Button"
+            android:layout_width="90dp"
+            android:layout_height="86dp"
+            android:layout_marginHorizontal="40dp"
+            android:layout_weight="1"
+            android:background="@color/left_arrow_background"
+            android:src="@mipmap/left_arrow_foreground" />
+
+        <ImageView
+            android:id="@+id/turtle_image"
+            android:layout_width="94dp"
+            android:layout_height="match_parent"
+            app:srcCompat="@mipmap/turtle" />
+
+        <ImageButton
+            android:id="@+id/right_button"
+            style="@android:style/Widget.Holo.Button"
+            android:layout_width="89dp"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="40dp"
+            android:layout_weight="1"
+            android:background="@color/backward_arrow_background"
+            android:src="@mipmap/right_arrow_foreground" />
+    </TableRow>
+
+    <ImageButton
+        android:id="@+id/back_button"
+        style="@android:style/Widget.Holo.Button"
+        android:layout_width="75dp"
+        android:layout_height="92dp"
+        android:layout_gravity="center"
+        android:background="@color/backward_arrow_background"
+        android:src="@mipmap/backward_arrow_foreground" />
+
 
 </LinearLayout>
